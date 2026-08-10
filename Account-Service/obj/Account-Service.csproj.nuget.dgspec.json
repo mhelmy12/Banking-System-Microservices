@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Whyred\\Banking-System\\Account-Service\\Account-Service.csproj": {}
+    "C:\\Whyred\\Banking-System\\account-service\\Account-Service.csproj": {}
   },
   "projects": {
-    "C:\\Whyred\\Banking-System\\Account-Service\\Account-Service.csproj": {
+    "C:\\Whyred\\Banking-System\\account-service\\Account-Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Whyred\\Banking-System\\Account-Service\\Account-Service.csproj",
+        "projectUniqueName": "C:\\Whyred\\Banking-System\\account-service\\Account-Service.csproj",
         "projectName": "Account-Service",
-        "projectPath": "C:\\Whyred\\Banking-System\\Account-Service\\Account-Service.csproj",
+        "projectPath": "C:\\Whyred\\Banking-System\\account-service\\Account-Service.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Whyred\\Banking-System\\Account-Service\\obj\\",
+        "outputPath": "C:\\Whyred\\Banking-System\\account-service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,6 +44,26 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Carter": {
+              "target": "Package",
+              "version": "[8.2.1, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
+            "IdGen": {
+              "target": "Package",
+              "version": "[3.0.7, )"
+            },
+            "IdGen.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.0.7, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.5.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.6, )"
@@ -53,6 +73,8 @@
               "version": "[9.0.18, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.18, )"
             },
@@ -60,9 +82,13 @@
               "target": "Package",
               "version": "[9.0.18, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools": {
+            "NSwag.AspNetCore": {
               "target": "Package",
-              "version": "[9.0.18, )"
+              "version": "[14.7.1, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[3.1.13, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

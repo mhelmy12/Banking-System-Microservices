@@ -11,6 +11,7 @@ public class Account
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.None)]
     public long Id { get; set; }
+
     public string AccountNumber { get; set; }
 
     [Required]
@@ -24,26 +25,26 @@ public class Account
 
     [Required]
     public string PhoneNumber { get; set; }
-    public AccountStatus Status { get; set; } = AccountStatus.Active;
+    public string Status { get; set; } = AccountStatus.Active;
 
     [Required]
-    public AccountType Type { get; set; }
+    public string Type { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; }
 
 
 }
 
-public enum AccountType
+public static class AccountType
 {
-    Checking,
-    Savings,
-    Credit
+    public const string Checking = "Checking";
+    public const string Savings = "Savings";
+    public const string Credit = "Credit";
 }
 
-public enum AccountStatus
+public static class AccountStatus
 {
-    Active,
-    Inactive,
-    Closed
+    public const string Active = "Active";
+    public const string Inactive = "Inactive";
+    public const string Closed = "Closed";
 }
