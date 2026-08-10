@@ -37,6 +37,9 @@ public class AccountDbContext : DbContext
             entity.HasIndex(a => a.Email)
                   .IsUnique()
                   .HasDatabaseName("IX_Accounts_Email_Unique");
+            entity.HasIndex(a => a.PhoneNumber)
+                  .IsUnique()
+                  .HasDatabaseName("IX_Accounts_PhoneNumber_Unique");
 
 
             entity.HasIndex(a => a.CreatedAt)

@@ -11,7 +11,7 @@ public class CreateAccountEndpoint : ICarterModule
         app.MapPost("/api/accounts", async (CreateAccountCommand command, IMediator mediator) =>
         {
             var response = await mediator.Send(command);
-            return Results.Ok(response);
+            return Results.Created($"/api/accounts/{response.Data.Id}", response);
         });
     }
 }

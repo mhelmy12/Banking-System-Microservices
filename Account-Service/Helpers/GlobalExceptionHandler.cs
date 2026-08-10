@@ -43,7 +43,8 @@ public class GlobalExceptionHandler : IExceptionHandler
                     Status = statusCode,
                     Title = "Validation Failed",
                     Detail = "There were validation errors in the request.",
-                    Instance = httpContext.Request.Path
+                    Instance = httpContext.Request.Path,
+                 
                 };
                 break;
 
@@ -65,7 +66,8 @@ public class GlobalExceptionHandler : IExceptionHandler
                     Status = statusCode,
                     Title = "Bad Request",
                     Detail = invalidOpEx.Message,
-                    Instance = httpContext.Request.Path
+                    Instance = httpContext.Request.Path,
+
                 };
                 break;
 

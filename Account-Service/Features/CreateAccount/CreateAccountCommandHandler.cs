@@ -1,9 +1,11 @@
 using System;
 using Account_Service.Data;
+using Account_Service.Helpers;
 using Account_Service.Models;
 using Account_Service.Services.AccountIdGenerator;
 using Account_Service.Services.AccountNumberGenerator;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Account_Service.Features.CreateAccount;
 
@@ -11,10 +13,19 @@ public class CreateAccountCommandHandler(
     AccountDbContext dbContext,
     [FromKeyedServices("Redis")] IAccountNumberGenerator accountNumberGenerator,
     [FromKeyedServices("Snowflake")] IAccountIdGenerator accountIdGenerator
-    ) : IRequestHandler<CreateAccountCommand, CreateAccountResponse>
+    ) : ResponseHandler, IRequestHandler<CreateAccountCommand, Response<CreateAccountResponse>>
 {
-    public async Task<CreateAccountResponse> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
+    public async Task<Response<CreateAccountResponse>> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
     {
+
+        var existingAccount = await dbContext.Accounts
+            .FirstOrDefaultAsync(a => a.Email == request.Email || a.PhoneNumber == request.Phone, cancellationToken);
+
+        if (existingAccount != null)
+        {
+            return BadRequest<CreateAccountResponse>("An account with the same email or phone number already exists.");
+        }
+
         var account = new Account
         {
             AccountNumber = await accountNumberGenerator.GenerateAsync(request.AccountType, cancellationToken),
@@ -38,7 +49,7 @@ public class CreateAccountCommandHandler(
 
         dbContext.Accounts.Add(account);
 
-        return new CreateAccountResponse
+        return Created(new CreateAccountResponse
         {
             Id = account.Id,
             AccountNumber = account.AccountNumber,
@@ -50,7 +61,7 @@ public class CreateAccountCommandHandler(
             DailyTransactionLimit = account.DailyTransactionLimit,
             Status = account.Status,
             CreatedAt = account.CreatedAt
-        };
+        }, "Account created successfully");
 
     }
 }

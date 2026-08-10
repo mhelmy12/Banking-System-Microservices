@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Account_Service.Features.CreateAccount;
 
-public class CreateAccountCommand : IRequest<CreateAccountResponse> , ITransactionCommand
+public class CreateAccountCommand : IRequest<Response<CreateAccountResponse>>, ITransactionCommand
 {
 
     public string AccountHolderName { get; set; }
