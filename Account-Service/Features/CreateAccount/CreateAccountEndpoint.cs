@@ -1,4 +1,5 @@
 using System;
+using Account_Service.Helpers;
 using Carter;
 using MediatR;
 
@@ -11,7 +12,7 @@ public class CreateAccountEndpoint : ICarterModule
         app.MapPost("/api/accounts", async (CreateAccountCommand command, IMediator mediator) =>
         {
             var response = await mediator.Send(command);
-            return Results.Created($"/api/accounts/{response.Data.Id}", response);
+            return EndpointResponse.Result(response);
         });
     }
 }

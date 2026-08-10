@@ -61,7 +61,7 @@ public class CreateAccountCommandHandler(
             DailyTransactionLimit = account.DailyTransactionLimit,
             Status = account.Status,
             CreatedAt = account.CreatedAt
-        }, "Account created successfully");
+        }, "Account created successfully", $"/api/accounts/{account.Id}");
 
     }
 }
