@@ -25,28 +25,26 @@ public class GlobalExceptionHandler : IExceptionHandler
 
         int statusCode = StatusCodes.Status500InternalServerError;
         ProblemDetails problemDetails;
-
+        var response = httpContext.Response;
+        response.ContentType = "application/json";
+        var responseModel = new Response<string>() { Succeeded = false, Message = exception?.Message ?? "" };
         switch (exception)
         {
-            case ValidationException validationEx:
-                statusCode = StatusCodes.Status400BadRequest;
 
+            case ValidationException validationEx:
+                statusCode = StatusCodes.Status422UnprocessableEntity;
                 var errors = validationEx.Errors
                     .GroupBy(x => x.PropertyName)
                     .ToDictionary(
                         g => g.Key,
                         g => g.Select(x => x.ErrorMessage).ToArray()
                     );
-
-                problemDetails = new ValidationProblemDetails(errors)
-                {
-                    Status = statusCode,
-                    Title = "Validation Failed",
-                    Detail = "There were validation errors in the request.",
-                    Instance = httpContext.Request.Path,
-                 
-                };
-                break;
+                responseModel.Errors = errors;
+                responseModel.StatusCode = System.Net.HttpStatusCode.UnprocessableEntity;
+                responseModel.Succeeded = false;
+                httpContext.Response.StatusCode = statusCode;
+                await httpContext.Response.WriteAsJsonAsync(responseModel, cancellationToken);
+                return true;
 
             case DbUpdateException dbUpdateEx when IsUniqueConstraintViolation(dbUpdateEx):
                 statusCode = StatusCodes.Status409Conflict;
