@@ -29,14 +29,28 @@ public class DeductBalanceCommandHandler(AccountDbContext dbContext) : ResponseH
             return BadRequest<DeductBalanceResponse>("Insufficient balance");
         }
 
-        account.Balance -= request.Amount;
-        await dbContext.SaveChangesAsync(cancellationToken);
+        var rowsAffected = await dbContext.Accounts
+              .Where(a => a.AccountNumber == request.AccountNumber
+                  && a.Status != AccountStatus.Closed
+                  && a.Status != AccountStatus.Inactive
+                  && a.Balance >= request.Amount)
+              .ExecuteUpdateAsync(s => s
+                  .SetProperty(a => a.Balance, a => a.Balance - request.Amount),
+                  cancellationToken);
+
+        if (rowsAffected == 0)
+        {
+            return BadRequest<DeductBalanceResponse>("Cannot deduct balance.");
+
+
+        }
 
         return new Response<DeductBalanceResponse>
         {
             Succeeded = true,
             Message = "Balance deducted successfully",
-            Data = new DeductBalanceResponse(account.AccountNumber, account.Balance)
+            Data = new DeductBalanceResponse(account.AccountNumber, account.Balance - request.Amount)
         };
+
     }
 }

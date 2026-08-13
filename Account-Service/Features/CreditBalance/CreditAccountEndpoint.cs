@@ -3,13 +3,13 @@ using Account_Service.Helpers;
 using Carter;
 using MediatR;
 
-namespace Account_Service.Features.DeductBalance;
+namespace Account_Service.Features.CreditBalance;
 
-public class DeductBalanceEndpoint : ICarterModule
+public class CreditAccountEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("/api/accounts/deduct-balance", async (DeductBalanceCommand command, IMediator mediator) =>
+        app.MapPost("/api/accounts/credit", async (CreditAccountCommand command, IMediator mediator) =>
         {
             var response = await mediator.Send(command);
             return EndpointResponse.Result(response);
