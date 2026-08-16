@@ -1,15 +1,13 @@
 using System.Reflection;
 using Account_Service.Data;
 using IdGen.DependencyInjection;
-using Carter;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
 using Account_Service.Services.AccountNumberGenerator;
-using FluentValidation;
-using MediatR;
-using Account_Service.Behaviors;
-using Shared.Helpers;
+using Shared.Extensions;
 using Account_Service.Services.AccountIdGenerator;
+using Account_Service.Behaviors;
+using Carter;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,18 +18,20 @@ builder.Services.AddDbContext<AccountDbContext>(options =>
 #endregion
 
 #region MediatR Configuration
-builder.Services.AddMediatR(config =>
-{
-    config.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+// builder.Services.AddMediatR(config =>
+// {
+//     config.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
 
-    config.AddOpenBehavior(typeof(ValidationBehavior<,>));
-    config.AddOpenBehavior(typeof(TransactionBehavior<,>));
-});
+//     config.AddOpenBehavior(typeof(ValidationBehavior<,>));
+//     config.AddOpenBehavior(typeof(TransactionBehavior<,>));
+// });
 #endregion
 
 #region  Carter Configuration
-builder.Services.AddCarter();
+// builder.Services.AddCarter();
 #endregion
+
+builder.Services.AddSharedInfrastructure([Assembly.GetExecutingAssembly()], (config) => { config.AddOpenBehavior(typeof(TransactionBehavior<,>)); });
 
 #region SnowflakeId Generator Configuration
 builder.Services.AddIdGen(1);
@@ -48,7 +48,7 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
 #endregion
 
 #region FluentValidation Configuration
-builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+// builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 #endregion
 
 #region  Services Container
@@ -58,13 +58,13 @@ builder.Services.AddKeyedScoped<IAccountIdGenerator, AccountIdSnowflakeGenerator
 
 #endregion
 #region Swagger Configuration
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// builder.Services.AddEndpointsApiExplorer();
+// builder.Services.AddSwaggerGen();
 #endregion
 
 #region Exception Handling Configuration
-builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
-builder.Services.AddProblemDetails();
+// builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+// builder.Services.AddProblemDetails();
 #endregion
 
 #region OpenAPI Configuration
@@ -87,7 +87,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseExceptionHandler();
-
 app.MapCarter();
-
 app.Run();

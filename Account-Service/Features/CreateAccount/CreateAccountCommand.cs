@@ -1,7 +1,7 @@
 using System;
 using Shared.Helpers;
-using MediatR;
 using Account_Service.Helpers;
+using MediatR;
 
 namespace Account_Service.Features.CreateAccount;
 

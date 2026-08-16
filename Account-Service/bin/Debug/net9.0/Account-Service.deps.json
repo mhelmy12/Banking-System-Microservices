@@ -8,20 +8,15 @@
     ".NETCoreApp,Version=v9.0": {
       "Account-Service/1.0.0": {
         "dependencies": {
-          "Carter": "8.2.1",
           "Confluent.Kafka": "2.15.0",
-          "FluentValidation.DependencyInjectionExtensions": "12.1.1",
           "IdGen": "3.0.7",
           "IdGen.DependencyInjection": "3.0.7",
-          "MediatR": "12.5.0",
           "Microsoft.AspNetCore.OpenApi": "9.0.6",
           "Microsoft.EntityFrameworkCore": "9.0.18",
           "Microsoft.EntityFrameworkCore.Design": "9.0.18",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.18",
-          "MyBank.Shared.Core": "1.0.1",
-          "NSwag.AspNetCore": "14.7.1",
-          "StackExchange.Redis": "3.1.13",
-          "Swashbuckle.AspNetCore": "9.0.6"
+          "MyBank.Shared.Core": "1.0.3",
+          "StackExchange.Redis": "3.1.13"
         },
         "runtime": {
           "Account-Service.dll": {}
@@ -65,7 +60,7 @@
       "Carter/8.2.1": {
         "dependencies": {
           "Carter.Analyzers": "8.2.1",
-          "FluentValidation": "12.1.1",
+          "FluentValidation": "12.1.0",
           "Microsoft.Extensions.DependencyModel": "9.0.18"
         },
         "runtime": {
@@ -97,23 +92,23 @@
           }
         }
       },
-      "FluentValidation/12.1.1": {
+      "FluentValidation/12.1.0": {
         "runtime": {
           "lib/net8.0/FluentValidation.dll": {
             "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.1.1.0"
+            "fileVersion": "12.1.0.0"
           }
         }
       },
-      "FluentValidation.DependencyInjectionExtensions/12.1.1": {
+      "FluentValidation.DependencyInjectionExtensions/12.1.0": {
         "dependencies": {
-          "FluentValidation": "12.1.1",
+          "FluentValidation": "12.1.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.5"
         },
         "runtime": {
           "lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll": {
             "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.1.1.0"
+            "fileVersion": "12.1.0.0"
           }
         }
       },
@@ -995,17 +990,18 @@
           }
         }
       },
-      "MyBank.Shared.Core/1.0.1": {
+      "MyBank.Shared.Core/1.0.3": {
         "dependencies": {
           "Carter": "8.2.1",
-          "FluentValidation.DependencyInjectionExtensions": "12.1.1",
+          "FluentValidation.DependencyInjectionExtensions": "12.1.0",
           "MediatR": "12.5.0",
+          "NSwag.AspNetCore": "14.7.1",
           "Swashbuckle.AspNetCore": "9.0.6"
         },
         "runtime": {
           "lib/net9.0/Shared.dll": {
-            "assemblyVersion": "1.0.1.0",
-            "fileVersion": "1.0.1.0"
+            "assemblyVersion": "1.0.3.0",
+            "fileVersion": "1.0.3.0"
           }
         }
       },
@@ -1556,19 +1552,19 @@
       "path": "confluent.kafka/2.15.0",
       "hashPath": "confluent.kafka.2.15.0.nupkg.sha512"
     },
-    "FluentValidation/12.1.1": {
+    "FluentValidation/12.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-EPpkIe1yh1a0OXyC100oOA8WMbZvqUu5plwhvYcb7oSELfyUZzfxV48BLhvs3kKo4NwG7MGLNgy1RJiYtT8Dpw==",
-      "path": "fluentvalidation/12.1.1",
-      "hashPath": "fluentvalidation.12.1.1.nupkg.sha512"
+      "sha512": "sha512-FqWEn8BdbbFEHGanj9K8SVo+LyBeFWy2rolaE+e1TNUbifr8M7Iss+I1AqTSc8kjKtvjl/WN4XIHiRpslh42bA==",
+      "path": "fluentvalidation/12.1.0",
+      "hashPath": "fluentvalidation.12.1.0.nupkg.sha512"
     },
-    "FluentValidation.DependencyInjectionExtensions/12.1.1": {
+    "FluentValidation.DependencyInjectionExtensions/12.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-D0VXh4dtjjX2aQizuaa0g6R8X3U1JaVqJPfGCvLwZX9t/O2h7tkpbitbadQMfwcgSPdDbI2vDxuwRMv/Uf9dHA==",
-      "path": "fluentvalidation.dependencyinjectionextensions/12.1.1",
-      "hashPath": "fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512"
+      "sha512": "sha512-p9ZnpVCUvkelSfqFYZP9aMtnuRlDRkrAAPqjQGG+1mVVn8zxE0bc1/RAFRBZKsPglbMBQOx8wXOZhg2fGstacQ==",
+      "path": "fluentvalidation.dependencyinjectionextensions/12.1.0",
+      "hashPath": "fluentvalidation.dependencyinjectionextensions.12.1.0.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
@@ -1920,12 +1916,12 @@
       "path": "mono.texttemplating/3.0.0",
       "hashPath": "mono.texttemplating.3.0.0.nupkg.sha512"
     },
-    "MyBank.Shared.Core/1.0.1": {
+    "MyBank.Shared.Core/1.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Hbt6gE6ku015AyS1UlANf2o+6fxceT+XOwI2M/Si8o2/dwj4HYCAMP72rX5YcdWo2gcJVjkk4zvZ0AMNx6gZDg==",
-      "path": "mybank.shared.core/1.0.1",
-      "hashPath": "mybank.shared.core.1.0.1.nupkg.sha512"
+      "sha512": "sha512-TCMnup2fS6Aqv2KwZk3i6L2xj9ySTSNm3iFCj4i4V7JvzJEtlLG5QiXXSbH5sIi0ZEzunAXkEkHc/lkTcpWTmg==",
+      "path": "mybank.shared.core/1.0.3",
+      "hashPath": "mybank.shared.core.1.0.3.nupkg.sha512"
     },
     "Namotion.Reflection/3.5.0": {
       "type": "package",

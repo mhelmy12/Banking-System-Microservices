@@ -100,7 +100,7 @@
           }
         }
       },
-      "FluentValidation/12.1.1": {
+      "FluentValidation/12.1.0": {
         "type": "package",
         "compile": {
           "lib/net8.0/FluentValidation.dll": {
@@ -113,11 +113,11 @@
           }
         }
       },
-      "FluentValidation.DependencyInjectionExtensions/12.1.1": {
+      "FluentValidation.DependencyInjectionExtensions/12.1.0": {
         "type": "package",
         "dependencies": {
-          "FluentValidation": "12.1.1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.0"
+          "FluentValidation": "12.1.0",
+          "Microsoft.Extensions.Dependencyinjection.Abstractions": "2.1.0"
         },
         "compile": {
           "lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll": {
@@ -863,12 +863,10 @@
       "Microsoft.Extensions.ApiDescription.Server/9.0.0": {
         "type": "package",
         "build": {
-          "build/Microsoft.Extensions.ApiDescription.Server.props": {},
-          "build/Microsoft.Extensions.ApiDescription.Server.targets": {}
+          "build/_._": {}
         },
         "buildMultiTargeting": {
-          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props": {},
-          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
+          "buildMultiTargeting/_._": {}
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/9.0.18": {
@@ -1275,12 +1273,13 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
-      "MyBank.Shared.Core/1.0.1": {
+      "MyBank.Shared.Core/1.0.3": {
         "type": "package",
         "dependencies": {
           "Carter": "8.2.1",
           "FluentValidation.DependencyInjectionExtensions": "12.1.0",
           "MediatR": "12.5.0",
+          "NSwag.AspNetCore": "14.7.1",
           "Swashbuckle.AspNetCore": "9.0.6"
         },
         "compile": {
@@ -1420,12 +1419,10 @@
           }
         },
         "build": {
-          "build/NSwag.AspNetCore.props": {},
-          "build/NSwag.AspNetCore.targets": {}
+          "build/_._": {}
         },
         "buildMultiTargeting": {
-          "buildMultiTargeting/NSwag.AspNetCore.props": {},
-          "buildMultiTargeting/NSwag.AspNetCore.targets": {}
+          "buildMultiTargeting/_._": {}
         }
       },
       "NSwag.Core/14.7.1": {
@@ -1548,10 +1545,10 @@
           "Swashbuckle.AspNetCore.SwaggerUI": "9.0.6"
         },
         "build": {
-          "build/Swashbuckle.AspNetCore.props": {}
+          "build/_._": {}
         },
         "buildMultiTargeting": {
-          "buildMultiTargeting/Swashbuckle.AspNetCore.props": {}
+          "buildMultiTargeting/_._": {}
         }
       },
       "Swashbuckle.AspNetCore.Swagger/9.0.6": {
@@ -2342,31 +2339,31 @@
         "lib/netstandard2.0/Confluent.Kafka.xml"
       ]
     },
-    "FluentValidation/12.1.1": {
-      "sha512": "EPpkIe1yh1a0OXyC100oOA8WMbZvqUu5plwhvYcb7oSELfyUZzfxV48BLhvs3kKo4NwG7MGLNgy1RJiYtT8Dpw==",
+    "FluentValidation/12.1.0": {
+      "sha512": "FqWEn8BdbbFEHGanj9K8SVo+LyBeFWy2rolaE+e1TNUbifr8M7Iss+I1AqTSc8kjKtvjl/WN4XIHiRpslh42bA==",
       "type": "package",
-      "path": "fluentvalidation/12.1.1",
+      "path": "fluentvalidation/12.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
         "fluent-validation-icon.png",
-        "fluentvalidation.12.1.1.nupkg.sha512",
+        "fluentvalidation.12.1.0.nupkg.sha512",
         "fluentvalidation.nuspec",
         "lib/net8.0/FluentValidation.dll",
         "lib/net8.0/FluentValidation.xml"
       ]
     },
-    "FluentValidation.DependencyInjectionExtensions/12.1.1": {
-      "sha512": "D0VXh4dtjjX2aQizuaa0g6R8X3U1JaVqJPfGCvLwZX9t/O2h7tkpbitbadQMfwcgSPdDbI2vDxuwRMv/Uf9dHA==",
+    "FluentValidation.DependencyInjectionExtensions/12.1.0": {
+      "sha512": "p9ZnpVCUvkelSfqFYZP9aMtnuRlDRkrAAPqjQGG+1mVVn8zxE0bc1/RAFRBZKsPglbMBQOx8wXOZhg2fGstacQ==",
       "type": "package",
-      "path": "fluentvalidation.dependencyinjectionextensions/12.1.1",
+      "path": "fluentvalidation.dependencyinjectionextensions/12.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
         "fluent-validation-icon.png",
-        "fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
+        "fluentvalidation.dependencyinjectionextensions.12.1.0.nupkg.sha512",
         "fluentvalidation.dependencyinjectionextensions.nuspec",
         "lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll",
         "lib/net8.0/FluentValidation.DependencyInjectionExtensions.xml"
@@ -4624,14 +4621,14 @@
         "readme.md"
       ]
     },
-    "MyBank.Shared.Core/1.0.1": {
-      "sha512": "Hbt6gE6ku015AyS1UlANf2o+6fxceT+XOwI2M/Si8o2/dwj4HYCAMP72rX5YcdWo2gcJVjkk4zvZ0AMNx6gZDg==",
+    "MyBank.Shared.Core/1.0.3": {
+      "sha512": "TCMnup2fS6Aqv2KwZk3i6L2xj9ySTSNm3iFCj4i4V7JvzJEtlLG5QiXXSbH5sIi0ZEzunAXkEkHc/lkTcpWTmg==",
       "type": "package",
-      "path": "mybank.shared.core/1.0.1",
+      "path": "mybank.shared.core/1.0.3",
       "files": [
         ".nupkg.metadata",
         "lib/net9.0/Shared.dll",
-        "mybank.shared.core.1.0.1.nupkg.sha512",
+        "mybank.shared.core.1.0.3.nupkg.sha512",
         "mybank.shared.core.nuspec"
       ]
     },
@@ -6232,20 +6229,15 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Carter >= 8.2.1",
       "Confluent.Kafka >= 2.15.0",
-      "FluentValidation.DependencyInjectionExtensions >= 12.1.1",
       "IdGen >= 3.0.7",
       "IdGen.DependencyInjection >= 3.0.7",
-      "MediatR >= 12.5.0",
       "Microsoft.AspNetCore.OpenApi >= 9.0.6",
       "Microsoft.EntityFrameworkCore >= 9.0.18",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.18",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.18",
-      "MyBank.Shared.Core >= 1.0.1",
-      "NSwag.AspNetCore >= 14.7.1",
-      "StackExchange.Redis >= 3.1.13",
-      "Swashbuckle.AspNetCore >= 9.0.6"
+      "MyBank.Shared.Core >= 1.0.3",
+      "StackExchange.Redis >= 3.1.13"
     ]
   },
   "packageFolders": {
@@ -6254,14 +6246,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Whyred\\Banking-System\\Account-Service\\Account-Service.csproj",
+      "projectUniqueName": "C:\\Whyred\\Banking-System\\account-service\\Account-Service.csproj",
       "projectName": "Account-Service",
-      "projectPath": "C:\\Whyred\\Banking-System\\Account-Service\\Account-Service.csproj",
+      "projectPath": "C:\\Whyred\\Banking-System\\account-service\\Account-Service.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Whyred\\Banking-System\\Account-Service\\obj\\",
+      "outputPath": "C:\\Whyred\\Banking-System\\account-service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Whyred\\Banking-System\\Account-Service\\NuGet.Config",
+        "C:\\Whyred\\Banking-System\\account-service\\NuGet.Config",
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
@@ -6293,17 +6285,9 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
-          "Carter": {
-            "target": "Package",
-            "version": "[8.2.1, )"
-          },
           "Confluent.Kafka": {
             "target": "Package",
             "version": "[2.15.0, )"
-          },
-          "FluentValidation.DependencyInjectionExtensions": {
-            "target": "Package",
-            "version": "[12.1.1, )"
           },
           "IdGen": {
             "target": "Package",
@@ -6312,10 +6296,6 @@
           "IdGen.DependencyInjection": {
             "target": "Package",
             "version": "[3.0.7, )"
-          },
-          "MediatR": {
-            "target": "Package",
-            "version": "[12.5.0, )"
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
@@ -6337,19 +6317,11 @@
           },
           "MyBank.Shared.Core": {
             "target": "Package",
-            "version": "[1.0.1, )"
-          },
-          "NSwag.AspNetCore": {
-            "target": "Package",
-            "version": "[14.7.1, )"
+            "version": "[1.0.3, )"
           },
           "StackExchange.Redis": {
             "target": "Package",
             "version": "[3.1.13, )"
-          },
-          "Swashbuckle.AspNetCore": {
-            "target": "Package",
-            "version": "[9.0.6, )"
           }
         },
         "imports": [

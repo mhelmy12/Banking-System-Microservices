@@ -46,17 +46,9 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "Carter": {
-              "target": "Package",
-              "version": "[8.2.1, )"
-            },
             "Confluent.Kafka": {
               "target": "Package",
               "version": "[2.15.0, )"
-            },
-            "FluentValidation.DependencyInjectionExtensions": {
-              "target": "Package",
-              "version": "[12.1.1, )"
             },
             "IdGen": {
               "target": "Package",
@@ -65,10 +57,6 @@
             "IdGen.DependencyInjection": {
               "target": "Package",
               "version": "[3.0.7, )"
-            },
-            "MediatR": {
-              "target": "Package",
-              "version": "[12.5.0, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
@@ -90,19 +78,11 @@
             },
             "MyBank.Shared.Core": {
               "target": "Package",
-              "version": "[1.0.1, )"
-            },
-            "NSwag.AspNetCore": {
-              "target": "Package",
-              "version": "[14.7.1, )"
+              "version": "[1.0.3, )"
             },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[3.1.13, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[9.0.6, )"
             }
           },
           "imports": [
