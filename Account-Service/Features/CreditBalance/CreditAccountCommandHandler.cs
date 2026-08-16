@@ -35,12 +35,9 @@ public class CreditAccountCommandHandler(AccountDbContext dbContext) : ResponseH
         if (rowsAffected == 0)
             return BadRequest<CreditAccountResponse>("Account is Inactive or Closed. Cannot credit balance.");
 
+        var updatedAccount = await dbContext.Accounts.FirstOrDefaultAsync(a => a.AccountNumber == request.AccountNumber, cancellationToken);
 
-        return new Response<CreditAccountResponse>
-        {
-            Succeeded = true,
-            Message = "Balance credited successfully",
-            Data = new CreditAccountResponse(account.AccountNumber, account.Balance + request.Amount)
-        };
+
+        return Success(new CreditAccountResponse(updatedAccount.AccountNumber, updatedAccount.Balance));
     }
 }

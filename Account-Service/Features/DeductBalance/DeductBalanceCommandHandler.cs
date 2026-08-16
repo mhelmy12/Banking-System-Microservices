@@ -41,15 +41,15 @@ public class DeductBalanceCommandHandler(AccountDbContext dbContext) : ResponseH
         if (rowsAffected == 0)
         {
             return BadRequest<DeductBalanceResponse>("Cannot deduct balance.");
-
-
         }
+
+        var updatedAccount = await dbContext.Accounts.FirstOrDefaultAsync(a => a.AccountNumber == request.AccountNumber, cancellationToken);
 
         return new Response<DeductBalanceResponse>
         {
             Succeeded = true,
             Message = "Balance deducted successfully",
-            Data = new DeductBalanceResponse(account.AccountNumber, account.Balance - request.Amount)
+            Data = new DeductBalanceResponse(updatedAccount.AccountNumber, updatedAccount.Balance)
         };
 
     }
