@@ -1,6 +1,6 @@
 using System;
 using Account_Service.Data;
-using Account_Service.Helpers;
+using Shared.Helpers;
 using Account_Service.Models;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -27,12 +27,12 @@ public class FreezeAccountCommandHandler(AccountDbContext dbContext) : ResponseH
         account.Status = AccountStatus.Closed;
         await dbContext.SaveChangesAsync(cancellationToken);
 
-        var response = new FreezeAccountResponse(account.AccountNumber, account.Status == AccountStatus.Closed ? true :  false);
+        var response = new FreezeAccountResponse(account.AccountNumber, account.Status == AccountStatus.Closed ? true : false);
         return Success(response);
 
 
 
 
-        
+
     }
 }

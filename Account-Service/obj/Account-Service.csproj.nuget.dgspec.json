@@ -1,26 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Whyred\\Banking-System\\Account-Service\\Account-Service.csproj": {}
+    "C:\\Whyred\\Banking-System\\account-service\\Account-Service.csproj": {}
   },
   "projects": {
-    "C:\\Whyred\\Banking-System\\Account-Service\\Account-Service.csproj": {
+    "C:\\Whyred\\Banking-System\\account-service\\Account-Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Whyred\\Banking-System\\Account-Service\\Account-Service.csproj",
+        "projectUniqueName": "C:\\Whyred\\Banking-System\\account-service\\Account-Service.csproj",
         "projectName": "Account-Service",
-        "projectPath": "C:\\Whyred\\Banking-System\\Account-Service\\Account-Service.csproj",
+        "projectPath": "C:\\Whyred\\Banking-System\\account-service\\Account-Service.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Whyred\\Banking-System\\Account-Service\\obj\\",
+        "outputPath": "C:\\Whyred\\Banking-System\\account-service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "C:\\Whyred\\Banking-System\\account-service\\NuGet.Config",
           "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/mhelmy12/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -85,6 +87,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[9.0.18, )"
+            },
+            "MyBank.Shared.Core": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             },
             "NSwag.AspNetCore": {
               "target": "Package",

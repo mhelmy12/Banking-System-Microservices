@@ -8,7 +8,7 @@ using Account_Service.Services.AccountNumberGenerator;
 using FluentValidation;
 using MediatR;
 using Account_Service.Behaviors;
-using Account_Service.Helpers;
+using Shared.Helpers;
 using Account_Service.Services.AccountIdGenerator;
 
 var builder = WebApplication.CreateBuilder(args);

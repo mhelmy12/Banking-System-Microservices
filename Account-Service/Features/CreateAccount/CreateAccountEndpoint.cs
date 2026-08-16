@@ -1,5 +1,5 @@
 using System;
-using Account_Service.Helpers;
+using Shared.Helpers;
 using Carter;
 using MediatR;
 

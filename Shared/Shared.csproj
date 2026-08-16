@@ -3,7 +3,15 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
+
+
+    <PackageId>MyBank.Shared.Core</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>YourName</Authors>
+    <Company>MyBank Inc.</Company>
+    <Description>Shared core library for MyBank microservices.</Description>
+    <RepositoryUrl>https://github.com/mhelmy12/BankSystem.Shared</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

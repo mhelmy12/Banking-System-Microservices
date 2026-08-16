@@ -1,6 +1,6 @@
 using System;
 using Account_Service.Data;
-using Account_Service.Helpers;
+using Shared.Helpers;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,7 +10,7 @@ public class GetAccountQueryHandler(AccountDbContext dbContext) : ResponseHandle
 {
     public async Task<Response<GetAccountResponse>> Handle(GetAccountQuery request, CancellationToken cancellationToken)
     {
-        var account = await dbContext.Accounts.FirstOrDefaultAsync(a => a.AccountNumber == request.AccountNumber , cancellationToken);
+        var account = await dbContext.Accounts.FirstOrDefaultAsync(a => a.AccountNumber == request.AccountNumber, cancellationToken);
         if (account == null)
         {
             return NotFound<GetAccountResponse>("Account not found.");

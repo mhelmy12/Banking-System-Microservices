@@ -1,7 +1,7 @@
 using System;
-using Account_Service.Helpers;
 using Carter;
 using MediatR;
+using Shared.Helpers    ;
 
 namespace Account_Service.Features.GetBalance;
 
@@ -14,6 +14,7 @@ public class GetBalanceEndpoint : ICarterModule
             var query = new GetBalanceQuery(accountNumber);
             var response = await mediator.Send(query);
             return EndpointResponse.Result(response);
+
         });
     }
 }

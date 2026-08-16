@@ -1,7 +1,8 @@
 using System;
 using Account_Service.Data;
-using Account_Service.Helpers;
+using Shared.Helpers;
 using MediatR;
+using Account_Service.Helpers;
 
 namespace Account_Service.Behaviors;
 
@@ -16,7 +17,7 @@ public class TransactionBehavior<TRequest, TResponse> : IPipelineBehavior<TReque
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
         using var transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken);
-    
+
         try
         {
             var response = await next();

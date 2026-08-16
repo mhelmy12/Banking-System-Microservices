@@ -1,5 +1,5 @@
 using System;
-using Account_Service.Helpers;
+using Shared.Helpers;
 using MediatR;
 
 namespace Account_Service.Features.GetBalance;

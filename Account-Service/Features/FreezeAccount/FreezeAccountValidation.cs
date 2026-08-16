@@ -1,7 +1,7 @@
 using System;
-using Account_Service.Helpers;
 using FluentValidation;
 using Microsoft.Identity.Client;
+using Account_Service.Helpers;
 
 namespace Account_Service.Features.FreezeAccount;
 

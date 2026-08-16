@@ -9,6 +9,7 @@
       "Account-Service/1.0.0": {
         "dependencies": {
           "Carter": "8.2.1",
+          "Confluent.Kafka": "2.15.0",
           "FluentValidation.DependencyInjectionExtensions": "12.1.1",
           "IdGen": "3.0.7",
           "IdGen.DependencyInjection": "3.0.7",
@@ -17,6 +18,7 @@
           "Microsoft.EntityFrameworkCore": "9.0.18",
           "Microsoft.EntityFrameworkCore.Design": "9.0.18",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.18",
+          "MyBank.Shared.Core": "1.0.1",
           "NSwag.AspNetCore": "14.7.1",
           "StackExchange.Redis": "3.1.13",
           "Swashbuckle.AspNetCore": "9.0.6"
@@ -84,6 +86,17 @@
           }
         }
       },
+      "Confluent.Kafka/2.15.0": {
+        "dependencies": {
+          "librdkafka.redist": "2.15.0"
+        },
+        "runtime": {
+          "lib/net8.0/Confluent.Kafka.dll": {
+            "assemblyVersion": "2.15.0.0",
+            "fileVersion": "2.15.0.0"
+          }
+        }
+      },
       "FluentValidation/12.1.1": {
         "runtime": {
           "lib/net8.0/FluentValidation.dll": {
@@ -130,6 +143,140 @@
           "lib/netstandard2.0/IdGen.DependencyInjection.dll": {
             "assemblyVersion": "3.0.7.0",
             "fileVersion": "3.0.7.0"
+          }
+        }
+      },
+      "librdkafka.redist/2.15.0": {
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/alpine-librdkafka.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/librdkafka.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-s390x/native/librdkafka.so": {
+            "rid": "linux-s390x",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/alpine-librdkafka.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/centos8-librdkafka.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/librdkafka.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/librdkafka.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/librdkafka.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libcrypto-3-x64.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "3.6.2.0"
+          },
+          "runtimes/win-x64/native/libcurl.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "8.19.0.0"
+          },
+          "runtimes/win-x64/native/librdkafka.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/librdkafkacpp.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libssl-3-x64.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "3.6.2.0"
+          },
+          "runtimes/win-x64/native/msvcp140.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "14.40.33816.0"
+          },
+          "runtimes/win-x64/native/vcruntime140.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "14.40.33816.0"
+          },
+          "runtimes/win-x64/native/z.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.3.2.0"
+          },
+          "runtimes/win-x64/native/zstd.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.5.7.0"
+          },
+          "runtimes/win-x86/native/libcrypto-3.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "3.6.2.0"
+          },
+          "runtimes/win-x86/native/libcurl.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "8.19.0.0"
+          },
+          "runtimes/win-x86/native/librdkafka.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/librdkafkacpp.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libssl-3.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "3.6.2.0"
+          },
+          "runtimes/win-x86/native/msvcp140.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "14.40.33816.0"
+          },
+          "runtimes/win-x86/native/vcruntime140.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "14.40.33816.0"
+          },
+          "runtimes/win-x86/native/z.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.3.2.0"
+          },
+          "runtimes/win-x86/native/zstd.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.5.7.0"
           }
         }
       },
@@ -848,6 +995,20 @@
           }
         }
       },
+      "MyBank.Shared.Core/1.0.1": {
+        "dependencies": {
+          "Carter": "8.2.1",
+          "FluentValidation.DependencyInjectionExtensions": "12.1.1",
+          "MediatR": "12.5.0",
+          "Swashbuckle.AspNetCore": "9.0.6"
+        },
+        "runtime": {
+          "lib/net9.0/Shared.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
+          }
+        }
+      },
       "Namotion.Reflection/3.5.0": {
         "runtime": {
           "lib/net8.0/Namotion.Reflection.dll": {
@@ -1388,6 +1549,13 @@
       "path": "carter.analyzers/8.2.1",
       "hashPath": "carter.analyzers.8.2.1.nupkg.sha512"
     },
+    "Confluent.Kafka/2.15.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/BOEnIKAq1AHq6vPl+0RBDiKwI6L6tJaYBo1qH+OAUP5MFy0i0MhSfgtqKW9/M8J9dQPfb/izWU+R0Uc6DyW2w==",
+      "path": "confluent.kafka/2.15.0",
+      "hashPath": "confluent.kafka.2.15.0.nupkg.sha512"
+    },
     "FluentValidation/12.1.1": {
       "type": "package",
       "serviceable": true,
@@ -1422,6 +1590,13 @@
       "sha512": "sha512-jIKjyJSosKtmGtg3v4t3lHdc5zQnZoyt4liJfWqMn22kxobuoy8wanpvYuSCBeo4vKRGhwjbMEkkOdKXQHyspw==",
       "path": "idgen.dependencyinjection/3.0.7",
       "hashPath": "idgen.dependencyinjection.3.0.7.nupkg.sha512"
+    },
+    "librdkafka.redist/2.15.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DzG2YcqWPT3Ly91aeDYsgsVcJXlOMiK9oqyRdPvQz9ZMbcV8Ob0rQA6fNUQ4sarmzFk4phqwPlVQxtZDGLP69w==",
+      "path": "librdkafka.redist/2.15.0",
+      "hashPath": "librdkafka.redist.2.15.0.nupkg.sha512"
     },
     "MediatR/12.5.0": {
       "type": "package",
@@ -1744,6 +1919,13 @@
       "sha512": "sha512-YqueG52R/Xej4VVbKuRIodjiAhV0HR/XVbLbNrJhCZnzjnSjgMJ/dCdV0akQQxavX6hp/LC6rqLGLcXeQYU7XA==",
       "path": "mono.texttemplating/3.0.0",
       "hashPath": "mono.texttemplating.3.0.0.nupkg.sha512"
+    },
+    "MyBank.Shared.Core/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Hbt6gE6ku015AyS1UlANf2o+6fxceT+XOwI2M/Si8o2/dwj4HYCAMP72rX5YcdWo2gcJVjkk4zvZ0AMNx6gZDg==",
+      "path": "mybank.shared.core/1.0.1",
+      "hashPath": "mybank.shared.core.1.0.1.nupkg.sha512"
     },
     "Namotion.Reflection/3.5.0": {
       "type": "package",

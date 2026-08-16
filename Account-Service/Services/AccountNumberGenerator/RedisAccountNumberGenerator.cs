@@ -1,7 +1,7 @@
 using System;
-using Account_Service.Helpers;
 using Account_Service.Models;
 using StackExchange.Redis;
+using Account_Service.Helpers;
 
 
 namespace Account_Service.Services.AccountNumberGenerator;

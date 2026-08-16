@@ -1275,6 +1275,24 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
+      "MyBank.Shared.Core/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Carter": "8.2.1",
+          "FluentValidation.DependencyInjectionExtensions": "12.1.0",
+          "MediatR": "12.5.0",
+          "Swashbuckle.AspNetCore": "9.0.6"
+        },
+        "compile": {
+          "lib/net9.0/Shared.dll": {}
+        },
+        "runtime": {
+          "lib/net9.0/Shared.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Namotion.Reflection/3.5.0": {
         "type": "package",
         "compile": {
@@ -4606,6 +4624,17 @@
         "readme.md"
       ]
     },
+    "MyBank.Shared.Core/1.0.1": {
+      "sha512": "Hbt6gE6ku015AyS1UlANf2o+6fxceT+XOwI2M/Si8o2/dwj4HYCAMP72rX5YcdWo2gcJVjkk4zvZ0AMNx6gZDg==",
+      "type": "package",
+      "path": "mybank.shared.core/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net9.0/Shared.dll",
+        "mybank.shared.core.1.0.1.nupkg.sha512",
+        "mybank.shared.core.nuspec"
+      ]
+    },
     "Namotion.Reflection/3.5.0": {
       "sha512": "FnASiAaTGSmB4SaSroIwnK4ph9noFIXZpPOMezDqWw5S/TNakzSnawPeM7u0Auq1/EqJXeqG4s6UjfrGBH33Ow==",
       "type": "package",
@@ -6213,6 +6242,7 @@
       "Microsoft.EntityFrameworkCore >= 9.0.18",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.18",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.18",
+      "MyBank.Shared.Core >= 1.0.1",
       "NSwag.AspNetCore >= 14.7.1",
       "StackExchange.Redis >= 3.1.13",
       "Swashbuckle.AspNetCore >= 9.0.6"
@@ -6231,13 +6261,15 @@
       "outputPath": "C:\\Whyred\\Banking-System\\Account-Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
+        "C:\\Whyred\\Banking-System\\Account-Service\\NuGet.Config",
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.pkg.github.com/mhelmy12/index.json": {}
       },
       "frameworks": {
         "net9.0": {
@@ -6302,6 +6334,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[9.0.18, )"
+          },
+          "MyBank.Shared.Core": {
+            "target": "Package",
+            "version": "[1.0.1, )"
           },
           "NSwag.AspNetCore": {
             "target": "Package",

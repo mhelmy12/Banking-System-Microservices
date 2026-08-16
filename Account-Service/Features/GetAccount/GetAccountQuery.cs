@@ -1,7 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using Account_Service.Helpers;
-using Account_Service.Services.AccountNumberGenerator;
+using Shared.Helpers;
 using MediatR;
 
 namespace Account_Service.Features.GetAccount;

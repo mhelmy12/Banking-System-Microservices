@@ -1,6 +1,6 @@
 using System;
 using Account_Service.Data;
-using Account_Service.Helpers;
+using Shared.Helpers;
 using Account_Service.Models;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
