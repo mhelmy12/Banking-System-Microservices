@@ -22,7 +22,10 @@ services:
 
   redis:
     image: redis:alpine
+    command: redis-server --appendonly yes
     container_name: redisdb
+    volumes:
+      - redis_data:/data
     ports:
       - "6969:6379"
     networks:
@@ -30,3 +33,5 @@ services:
 
 networks:
   app_network:
+volumes:
+  redis_data:

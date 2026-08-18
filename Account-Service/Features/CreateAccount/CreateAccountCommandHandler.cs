@@ -23,7 +23,7 @@ public class CreateAccountCommandHandler(
 
         if (existingAccount != null)
         {
-            return BadRequest<CreateAccountResponse>("An account with the same email or phone number already exists.");
+            return BadRequest<CreateAccountResponse>("An account with the same email, phone number, or account number already exists.");
         }
 
         var account = new Account
