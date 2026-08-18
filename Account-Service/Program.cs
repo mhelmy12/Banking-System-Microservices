@@ -17,19 +17,8 @@ builder.Services.AddDbContext<AccountDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AccountDbConnection")));
 #endregion
 
-#region MediatR Configuration
-// builder.Services.AddMediatR(config =>
-// {
-//     config.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
 
-//     config.AddOpenBehavior(typeof(ValidationBehavior<,>));
-//     config.AddOpenBehavior(typeof(TransactionBehavior<,>));
-// });
-#endregion
 
-#region  Carter Configuration
-// builder.Services.AddCarter();
-#endregion
 
 builder.Services.AddSharedInfrastructure([Assembly.GetExecutingAssembly()], (config) => { config.AddOpenBehavior(typeof(TransactionBehavior<,>)); });
 
@@ -47,9 +36,6 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
 });
 #endregion
 
-#region FluentValidation Configuration
-// builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-#endregion
 
 #region  Services Container
 builder.Services.AddKeyedScoped<IAccountNumberGenerator, RedisAccountNumberGenerator>("Redis");
@@ -57,15 +43,8 @@ builder.Services.AddKeyedScoped<IAccountNumberGenerator, RedisAccountNumberGener
 builder.Services.AddKeyedScoped<IAccountIdGenerator, AccountIdSnowflakeGenerator>("Snowflake");
 
 #endregion
-#region Swagger Configuration
-// builder.Services.AddEndpointsApiExplorer();
-// builder.Services.AddSwaggerGen();
-#endregion
 
-#region Exception Handling Configuration
-// builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
-// builder.Services.AddProblemDetails();
-#endregion
+
 
 #region OpenAPI Configuration
 builder.Services.AddOpenApi();

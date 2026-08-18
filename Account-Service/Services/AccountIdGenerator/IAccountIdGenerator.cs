@@ -5,6 +5,6 @@ namespace Account_Service.Services.AccountIdGenerator;
 public interface IAccountIdGenerator
 {
 
-    public string Generate(CancellationToken cancellationToken = default);
+    public string Generate();
 
 }

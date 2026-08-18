@@ -1,12 +1,13 @@
 using System;
 using IdGen;
-namespace Account_Service.Services.AccountIdGenerator;
 
-public class AccountIdSnowflakeGenerator : IAccountIdGenerator
+namespace Transaction_Service.Services;
+
+public class TransactionSnowflakeIdGenerator : ITransactionIdGenerator
 {
     private readonly IIdGenerator<long> generator;
 
-    public AccountIdSnowflakeGenerator(IIdGenerator<long> Generator)
+    public TransactionSnowflakeIdGenerator(IIdGenerator<long> Generator)
     {
         generator = Generator;
     }
