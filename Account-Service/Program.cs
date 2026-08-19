@@ -8,7 +8,6 @@ using Shared.Extensions;
 using Account_Service.Services.AccountIdGenerator;
 using Account_Service.Behaviors;
 using Carter;
-
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -18,7 +17,7 @@ builder.Services.AddDbContext<AccountDbContext>(options =>
 #endregion
 
 
-
+builder.Services.AddGrpc();
 
 builder.Services.AddSharedInfrastructure([Assembly.GetExecutingAssembly()], (config) => { config.AddOpenBehavior(typeof(TransactionBehavior<,>)); });
 
@@ -66,5 +65,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseExceptionHandler();
+app.MapGrpcService<Account_Service.Grpc.v1.AccountServiceGrpcImplV1>();
 app.MapCarter();
 app.Run();

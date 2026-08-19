@@ -221,3 +221,11 @@ C:\Whyred\Banking-System\Account-Service\bin\Debug\net9.0\Account-Service.deps.j
 C:\Whyred\Banking-System\Account-Service\bin\Debug\net9.0\Account-Service.runtimeconfig.json
 C:\Whyred\Banking-System\Account-Service\obj\Debug\net9.0\Account-Service.genruntimeconfig.cache
 C:\Whyred\Banking-System\Account-Service\obj\Debug\net9.0\ref\Account-Service.dll
+C:\Whyred\Banking-System\Account-Service\bin\Debug\net9.0\Google.Protobuf.dll
+C:\Whyred\Banking-System\Account-Service\bin\Debug\net9.0\Grpc.AspNetCore.Server.dll
+C:\Whyred\Banking-System\Account-Service\bin\Debug\net9.0\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\Whyred\Banking-System\Account-Service\bin\Debug\net9.0\Grpc.Core.Api.dll
+C:\Whyred\Banking-System\Account-Service\bin\Debug\net9.0\Grpc.Net.Client.dll
+C:\Whyred\Banking-System\Account-Service\bin\Debug\net9.0\Grpc.Net.ClientFactory.dll
+C:\Whyred\Banking-System\Account-Service\bin\Debug\net9.0\Grpc.Net.Common.dll
+C:\Whyred\Banking-System\Account-Service\bin\Debug\net9.0\BankSystem.GrpcContracts.dll

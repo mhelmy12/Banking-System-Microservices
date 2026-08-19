@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[2.15.0, )"
             },
+            "Grpc.AspNetCore": {
+              "target": "Package",
+              "version": "[2.83.0, )"
+            },
             "IdGen": {
               "target": "Package",
               "version": "[3.0.7, )"
@@ -75,6 +79,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[9.0.18, )"
+            },
+            "MyBank.GrpcContracts.Core": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             },
             "MyBank.Shared.Core": {
               "target": "Package",

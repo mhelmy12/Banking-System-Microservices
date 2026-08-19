@@ -7,6 +7,8 @@ using StackExchange.Redis;
 using Transaction_Service.Behaviors;
 using Transaction_Service.Data;
 using Transaction_Service.Services;
+using BankSystem.GrpcContracts.Protos.Account.v1;
+using Transaction_Service.AccountServiceClient;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -31,8 +33,12 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
 #endregion
 
 builder.Services.AddKeyedSingleton<ITransactionIdGenerator, TransactionSnowflakeIdGenerator>("Snowflake");
+builder.Services.AddKeyedSingleton<IAccountServiceClient, GrpcAccountServiceAdapter>("AccountService");
 
-
+builder.Services.AddGrpcClient<AccountGrpcService.AccountGrpcServiceClient>(options =>
+{
+    options.Address = new Uri(builder.Configuration.GetConnectionString("AccountService") ?? throw new InvalidOperationException("AccountService connection string is missing."));
+});
 
 builder.Services.AddSharedInfrastructure([Assembly.GetExecutingAssembly()], (config) => { config.AddOpenBehavior(typeof(TransactionBehavior<,>)); });
 builder.Services.AddOpenApi();

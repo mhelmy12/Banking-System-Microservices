@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run HTTP",
+      "command": "dotnet",
+      "type": "process",
+      "args": ["run", "--launch-profile", "http"],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Run HTTPS",
+      "command": "dotnet",
+      "type": "process",
+      "args": ["run", "--launch-profile", "https"],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}

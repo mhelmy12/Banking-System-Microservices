@@ -9,12 +9,14 @@
       "Account-Service/1.0.0": {
         "dependencies": {
           "Confluent.Kafka": "2.15.0",
+          "Grpc.AspNetCore": "2.83.0",
           "IdGen": "3.0.7",
           "IdGen.DependencyInjection": "3.0.7",
           "Microsoft.AspNetCore.OpenApi": "9.0.6",
           "Microsoft.EntityFrameworkCore": "9.0.18",
           "Microsoft.EntityFrameworkCore.Design": "9.0.18",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.18",
+          "MyBank.GrpcContracts.Core": "1.0.1",
           "MyBank.Shared.Core": "1.0.3",
           "StackExchange.Redis": "3.1.13"
         },
@@ -112,6 +114,88 @@
           }
         }
       },
+      "Google.Protobuf/3.35.1": {
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.35.1.0",
+            "fileVersion": "3.35.1.0"
+          }
+        }
+      },
+      "Grpc.AspNetCore/2.83.0": {
+        "dependencies": {
+          "Google.Protobuf": "3.35.1",
+          "Grpc.AspNetCore.Server.ClientFactory": "2.83.0",
+          "Grpc.Tools": "2.83.0"
+        }
+      },
+      "Grpc.AspNetCore.Server/2.83.0": {
+        "dependencies": {
+          "Grpc.Net.Common": "2.83.0"
+        },
+        "runtime": {
+          "lib/net9.0/Grpc.AspNetCore.Server.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.83.0.0"
+          }
+        }
+      },
+      "Grpc.AspNetCore.Server.ClientFactory/2.83.0": {
+        "dependencies": {
+          "Grpc.AspNetCore.Server": "2.83.0",
+          "Grpc.Net.ClientFactory": "2.83.0"
+        },
+        "runtime": {
+          "lib/net9.0/Grpc.AspNetCore.Server.ClientFactory.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.83.0.0"
+          }
+        }
+      },
+      "Grpc.Core.Api/2.83.0": {
+        "runtime": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.83.0.0"
+          }
+        }
+      },
+      "Grpc.Net.Client/2.83.0": {
+        "dependencies": {
+          "Grpc.Net.Common": "2.83.0",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.5"
+        },
+        "runtime": {
+          "lib/net9.0/Grpc.Net.Client.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.83.0.0"
+          }
+        }
+      },
+      "Grpc.Net.ClientFactory/2.83.0": {
+        "dependencies": {
+          "Grpc.Net.Client": "2.83.0",
+          "Microsoft.Extensions.Http": "8.0.0"
+        },
+        "runtime": {
+          "lib/net9.0/Grpc.Net.ClientFactory.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.83.0.0"
+          }
+        }
+      },
+      "Grpc.Net.Common/2.83.0": {
+        "dependencies": {
+          "Grpc.Core.Api": "2.83.0"
+        },
+        "runtime": {
+          "lib/net9.0/Grpc.Net.Common.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.83.0.0"
+          }
+        }
+      },
+      "Grpc.Tools/2.83.0": {},
       "Humanizer.Core/2.14.1": {
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
@@ -768,6 +852,12 @@
           }
         }
       },
+      "Microsoft.Extensions.Configuration/8.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.18",
+          "Microsoft.Extensions.Primitives": "9.0.18"
+        }
+      },
       "Microsoft.Extensions.Configuration.Abstractions/9.0.18": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "9.0.18"
@@ -777,6 +867,11 @@
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.1826.31522"
           }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Binder/8.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.18"
         }
       },
       "Microsoft.Extensions.DependencyInjection/9.0.18": {
@@ -804,6 +899,30 @@
             "assemblyVersion": "9.0.0.18",
             "fileVersion": "9.0.1826.31522"
           }
+        }
+      },
+      "Microsoft.Extensions.Diagnostics/8.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Diagnostics.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "8.0.0"
+        }
+      },
+      "Microsoft.Extensions.Diagnostics.Abstractions/8.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.5",
+          "Microsoft.Extensions.Options": "9.0.18",
+          "System.Diagnostics.DiagnosticSource": "10.0.5"
+        }
+      },
+      "Microsoft.Extensions.Http/8.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.18",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.5",
+          "Microsoft.Extensions.Diagnostics": "8.0.0",
+          "Microsoft.Extensions.Logging": "9.0.18",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.5",
+          "Microsoft.Extensions.Options": "9.0.18"
         }
       },
       "Microsoft.Extensions.Logging/9.0.18": {
@@ -841,6 +960,15 @@
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.1826.31522"
           }
+        }
+      },
+      "Microsoft.Extensions.Options.ConfigurationExtensions/8.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.18",
+          "Microsoft.Extensions.Configuration.Binder": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.5",
+          "Microsoft.Extensions.Options": "9.0.18",
+          "Microsoft.Extensions.Primitives": "9.0.18"
         }
       },
       "Microsoft.Extensions.Primitives/9.0.18": {
@@ -987,6 +1115,18 @@
           "lib/net6.0/Mono.TextTemplating.dll": {
             "assemblyVersion": "3.0.0.0",
             "fileVersion": "3.0.0.1"
+          }
+        }
+      },
+      "MyBank.GrpcContracts.Core/1.0.1": {
+        "dependencies": {
+          "Google.Protobuf": "3.35.1",
+          "Grpc.Net.Client": "2.83.0"
+        },
+        "runtime": {
+          "lib/net9.0/BankSystem.GrpcContracts.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
           }
         }
       },
@@ -1566,6 +1706,69 @@
       "path": "fluentvalidation.dependencyinjectionextensions/12.1.0",
       "hashPath": "fluentvalidation.dependencyinjectionextensions.12.1.0.nupkg.sha512"
     },
+    "Google.Protobuf/3.35.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pxtkuXhR8svkvDTQrYew9GZQt6eWhblz/V/WKUFrQgkHYlQPsumJTeF6ppHRJpe6j9ffukkd5lQULiiKaek4xA==",
+      "path": "google.protobuf/3.35.1",
+      "hashPath": "google.protobuf.3.35.1.nupkg.sha512"
+    },
+    "Grpc.AspNetCore/2.83.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PMoR+paO24EgBjBvfCqrmkurBH+RmfOIYThsUv6sGx6LUH0kxhzQkjtZ44mJxU0IwEw64dCzHhIjAM+CmORp3g==",
+      "path": "grpc.aspnetcore/2.83.0",
+      "hashPath": "grpc.aspnetcore.2.83.0.nupkg.sha512"
+    },
+    "Grpc.AspNetCore.Server/2.83.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rWeSaXaSPIIerc82lhHKqmzlp/sgLnG+Zw1c3YEEVp/un+hJKPxJOXWuGUOS2cs3EvcZBZ2tliXsnAg5Mdk2Ew==",
+      "path": "grpc.aspnetcore.server/2.83.0",
+      "hashPath": "grpc.aspnetcore.server.2.83.0.nupkg.sha512"
+    },
+    "Grpc.AspNetCore.Server.ClientFactory/2.83.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DrX1dE9WJNOsaKDQpD1gQaVE567jMNfhpBuG6P2NvGhirf2HZczfIJtd2d1L+steYh0YZ1q57Sa1ZHuufMPYBw==",
+      "path": "grpc.aspnetcore.server.clientfactory/2.83.0",
+      "hashPath": "grpc.aspnetcore.server.clientfactory.2.83.0.nupkg.sha512"
+    },
+    "Grpc.Core.Api/2.83.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xU8BT2bCw4Ct+/qIFJhhjkDEilKUbBOfp4US7l3Xa3hnlkN9l2LgISCbOw4PFYpW5jJFcK7FUAyWOFIQ94Hiqg==",
+      "path": "grpc.core.api/2.83.0",
+      "hashPath": "grpc.core.api.2.83.0.nupkg.sha512"
+    },
+    "Grpc.Net.Client/2.83.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dHYtx7hW4muttsCrWNG4/Ysb1iAIhNPEq28eo7vF166CdXn/RXOr3SGvSreIGIjvmdrADrBNJ2cUeJBto/T0XA==",
+      "path": "grpc.net.client/2.83.0",
+      "hashPath": "grpc.net.client.2.83.0.nupkg.sha512"
+    },
+    "Grpc.Net.ClientFactory/2.83.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j07orG5YnET3n5+TnczHCQsyWL3a4n/lJlIS88B3Zffylpp0RkcPzLv4ILAwKmOWOBvbBHiytPzAwJ8p7JomEQ==",
+      "path": "grpc.net.clientfactory/2.83.0",
+      "hashPath": "grpc.net.clientfactory.2.83.0.nupkg.sha512"
+    },
+    "Grpc.Net.Common/2.83.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9w52xxORdIGu4Mm8lff3psMIlarenu+7TC4uIfiiW9AyaHZ6iPE/18gIkG1DD9byGDuhjuhnN9hiviBUAmCuZw==",
+      "path": "grpc.net.common/2.83.0",
+      "hashPath": "grpc.net.common.2.83.0.nupkg.sha512"
+    },
+    "Grpc.Tools/2.83.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vK2Go/83W0v2Nn7tTP9fGrX4IjmOa93s3M0SZeFimU1vIIr2wL9yNJlIyK21y85SGm3++JncB8IF751cjoLHuQ==",
+      "path": "grpc.tools/2.83.0",
+      "hashPath": "grpc.tools.2.83.0.nupkg.sha512"
+    },
     "Humanizer.Core/2.14.1": {
       "type": "package",
       "serviceable": true,
@@ -1762,12 +1965,26 @@
       "path": "microsoft.extensions.caching.memory/9.0.18",
       "hashPath": "microsoft.extensions.caching.memory.9.0.18.nupkg.sha512"
     },
+    "Microsoft.Extensions.Configuration/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0J/9YNXTMWSZP2p2+nvl8p71zpSwokZXZuJW+VjdErkegAnFdO1XlqtA62SJtgVYHdKu3uPxJHcMR/r35HwFBA==",
+      "path": "microsoft.extensions.configuration/8.0.0",
+      "hashPath": "microsoft.extensions.configuration.8.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.Configuration.Abstractions/9.0.18": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-jgC5SZeK94t8DXl836ifIM5gScNqknkOwISrY503eWg7AHBrv+fnwty+C9n35H4WvBjs8OY21jPlRRf7ESBK/g==",
       "path": "microsoft.extensions.configuration.abstractions/9.0.18",
       "hashPath": "microsoft.extensions.configuration.abstractions.9.0.18.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Binder/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mBMoXLsr5s1y2zOHWmKsE9veDcx8h1x/c3rz4baEdQKTeDcmQAPNbB54Pi/lhFO3K431eEq6PFbMgLaa6PHFfA==",
+      "path": "microsoft.extensions.configuration.binder/8.0.0",
+      "hashPath": "microsoft.extensions.configuration.binder.8.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/9.0.18": {
       "type": "package",
@@ -1790,6 +2007,27 @@
       "path": "microsoft.extensions.dependencymodel/9.0.18",
       "hashPath": "microsoft.extensions.dependencymodel.9.0.18.nupkg.sha512"
     },
+    "Microsoft.Extensions.Diagnostics/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3PZp/YSkIXrF7QK7PfC1bkyRYwqOHpWFad8Qx+4wkuumAeXo1NHaxpS9LboNA9OvNSAu+QOVlXbMyoY+pHSqcw==",
+      "path": "microsoft.extensions.diagnostics/8.0.0",
+      "hashPath": "microsoft.extensions.diagnostics.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Diagnostics.Abstractions/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JHYCQG7HmugNYUhOl368g+NMxYE/N/AiclCYRNlgCY9eVyiBkOHMwK4x60RYMxv9EL3+rmj1mqHvdCiPpC+D4Q==",
+      "path": "microsoft.extensions.diagnostics.abstractions/8.0.0",
+      "hashPath": "microsoft.extensions.diagnostics.abstractions.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Http/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cWz4caHwvx0emoYe7NkHPxII/KkTI8R/LC9qdqJqnKv2poTJ4e2qqPGQqvRoQ5kaSA4FU5IV3qFAuLuOhoqULQ==",
+      "path": "microsoft.extensions.http/8.0.0",
+      "hashPath": "microsoft.extensions.http.8.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.Logging/9.0.18": {
       "type": "package",
       "serviceable": true,
@@ -1810,6 +2048,13 @@
       "sha512": "sha512-HiA/R0jGR10TGuR6coM8KMUdJ5YlP3bhGxqEdGLkxFdBV1EFNdZMAajSEZHwkex4X/iMQwRCQVotqpElcxOImg==",
       "path": "microsoft.extensions.options/9.0.18",
       "hashPath": "microsoft.extensions.options.9.0.18.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options.ConfigurationExtensions/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0f4DMRqEd50zQh+UyJc+/HiBsZ3vhAQALgdkcQEalSH1L2isdC7Yj54M3cyo5e+BeO5fcBQ7Dxly8XiBBcvRgw==",
+      "path": "microsoft.extensions.options.configurationextensions/8.0.0",
+      "hashPath": "microsoft.extensions.options.configurationextensions.8.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Primitives/9.0.18": {
       "type": "package",
@@ -1915,6 +2160,13 @@
       "sha512": "sha512-YqueG52R/Xej4VVbKuRIodjiAhV0HR/XVbLbNrJhCZnzjnSjgMJ/dCdV0akQQxavX6hp/LC6rqLGLcXeQYU7XA==",
       "path": "mono.texttemplating/3.0.0",
       "hashPath": "mono.texttemplating.3.0.0.nupkg.sha512"
+    },
+    "MyBank.GrpcContracts.Core/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kbFGqDTvYH5EKab/+voShcad6QaVR5FV6ZFHqNJCDJzyl8H9ncw8wHP49VclUN/T5WrZlQq6pEju47tuqTcjMw==",
+      "path": "mybank.grpccontracts.core/1.0.1",
+      "hashPath": "mybank.grpccontracts.core.1.0.1.nupkg.sha512"
     },
     "MyBank.Shared.Core/1.0.3": {
       "type": "package",

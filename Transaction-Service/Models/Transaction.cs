@@ -14,10 +14,14 @@ public class Transaction
 
 
     [Required]
-    public long SenderAccountNumber { get; set; }
+    public string IdempotencyKey { get; set; } = null!;
+
 
     [Required]
-    public long ReceiverAccountNumber { get; set; }
+    public string SenderAccountNumber { get; set; } = null!;
+
+    [Required]
+    public string ReceiverAccountNumber { get; set; } = null!;
 
     [Column(TypeName = "decimal(15, 2)")]
     [Required]
@@ -35,23 +39,21 @@ public class Transaction
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? CompletedAt { get; set; }
 
-    [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum TransactionType
-    {
-        TRANSFER,
-        DEPOSIT,
-        WITHDRAWAL,
-        PAYMENT
-    }
 
-    [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum TransactionStatus
-    {
-        PENDING,
-        PROCESSING,
-        PENDING_VERIFICATION,
-        COMPLETED,
-        FAILED,
-        FLAGGED
-    }
+}
+public enum TransactionType
+{
+    TRANSFER,
+    DEPOSIT,
+    WITHDRAWAL,
+    PAYMENT
+}
+public enum TransactionStatus
+{
+    PENDING,
+    PROCESSING,
+    PENDING_VERIFICATION,
+    COMPLETED,
+    FAILED,
+    FLAGGED
 }

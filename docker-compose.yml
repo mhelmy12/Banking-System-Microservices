@@ -31,7 +31,38 @@ services:
     networks:
       - app_network
 
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${SQL_SERVER_PASSWORD}
+      - MSSQL_AGENT_ENABLED=True
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - app_network
+
+  debezium-connect:
+    image: quay.io/debezium/connect:latest
+    ports:
+      - 8083:8083
+    environment:
+      - BOOTSTRAP_SERVERS=kafka:9092
+      - GROUP_ID=1
+      - CONFIG_STORAGE_TOPIC=my_connect_configs
+      - OFFSET_STORAGE_TOPIC=my_connect_offsets
+      - STATUS_STORAGE_TOPIC=my_connect_statuses
+    networks:
+      - app_network
+    depends_on:
+      - kafka
+      - sqlserver
+
 networks:
   app_network:
 volumes:
   redis_data:
+  sqlserver_data:

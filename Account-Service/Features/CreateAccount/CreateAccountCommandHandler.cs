@@ -29,7 +29,7 @@ public class CreateAccountCommandHandler(
         var account = new Account
         {
             AccountNumber = await accountNumberGenerator.GenerateAsync(request.AccountType, cancellationToken),
-            Id = long.Parse(accountIdGenerator.Generate(cancellationToken)),
+            Id = long.Parse(accountIdGenerator.Generate()),
             AccountHolderName = request.AccountHolderName,
             Email = request.Email,
             PhoneNumber = request.Phone,
