@@ -103,14 +103,15 @@ public class TransferCommandHandler : ResponseHandler, IRequestHandler<TransferC
             Id = Guid.NewGuid().ToString(),
             EventType = nameof(TransactionInitiatedEvent),
             Payload = System.Text.Json.JsonSerializer.Serialize(initiatedEvent),
-            OccurredOn = DateTime.UtcNow
+            OccurredOn = DateTime.UtcNow,
+            AggregateId = transaction.Id.ToString(),
+            AggregateType = nameof(Transaction),
         };
 
         dbContext.OutboxMessages.Add(outboxMessage);
 
         await dbContext.SaveChangesAsync(cancellationToken);
 
-        //    Background Service will pick up the OutboxMessage and publish it to Kafka.
 
         return Success(
                new TransferCommandResponse(
