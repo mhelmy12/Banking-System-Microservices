@@ -8,15 +8,17 @@ services:
       - KAFKA_NODE_ID=1
       - KAFKA_PROCESS_ROLES=broker,controller
       - KAFKA_CONTROLLER_QUORUM_VOTERS=1@kafka:9093
-      - CLUSTER_ID=MkU3OEVBNTcwNTJENDM2Qk
-      - KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093
-      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+      - KAFKA_LISTENERS=INTERNAL://0.0.0.0:29092,EXTERNAL://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093
+      - KAFKA_ADVERTISED_LISTENERS=INTERNAL://kafka:29092,EXTERNAL://localhost:9092
+      - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
+      - KAFKA_INTER_BROKER_LISTENER_NAME=INTERNAL
       - KAFKA_CONTROLLER_LISTENER_NAMES=CONTROLLER
-      - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
       - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
       - KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1
       - KAFKA_TRANSACTION_STATE_LOG_MIN_ISR=1
-      - KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS=0
+      - CLUSTER_ID=MkU3OEVBNTcwNTJENDM2Qk
+    volumes:
+      - kafka_data:/var/lib/kafka/data
     networks:
       - app_network
 
@@ -47,22 +49,55 @@ services:
 
   debezium-connect:
     image: quay.io/debezium/connect:latest
+    container_name: debezium
+    restart: on-failure
     ports:
       - 8083:8083
     environment:
-      - BOOTSTRAP_SERVERS=kafka:9092
-      - GROUP_ID=1
-      - CONFIG_STORAGE_TOPIC=my_connect_configs
-      - OFFSET_STORAGE_TOPIC=my_connect_offsets
-      - STATUS_STORAGE_TOPIC=my_connect_statuses
+      - BOOTSTRAP_SERVERS=kafka:29092
+      - GROUP_ID=banking-connect
+      - CONFIG_STORAGE_TOPIC=connect_configs
+      - OFFSET_STORAGE_TOPIC=connect_offsets
+      - STATUS_STORAGE_TOPIC=connect_status
+      - CONFIG_STORAGE_REPLICATION_FACTOR=1
+      - OFFSET_STORAGE_REPLICATION_FACTOR=1
+      - STATUS_STORAGE_REPLICATION_FACTOR=1
     networks:
       - app_network
     depends_on:
       - kafka
       - sqlserver
+  schema-registry:
+    image: confluentinc/cp-schema-registry:latest
+    container_name: schema-registry
+    ports:
+      - "8081:8081"
+    environment:
+      - SCHEMA_REGISTRY_HOST_NAME=schema-registry
+      - SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS=kafka:29092
+    networks:
+      - app_network
+    depends_on:
+      - kafka
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    environment:
+      - KAFKA_CLUSTERS_0_NAME=local
+      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka:29092
+      - KAFKA_CLUSTERS_0_SCHEMAREGISTRY=http://schema-registry:8081
+    ports:
+      - "8080:8080"
+    networks:
+      - app_network
+    depends_on:
+      - kafka
 
 networks:
   app_network:
+
 volumes:
   redis_data:
   sqlserver_data:
+  kafka_data:
