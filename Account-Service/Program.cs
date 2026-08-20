@@ -8,6 +8,7 @@ using Shared.Extensions;
 using Account_Service.Services.AccountIdGenerator;
 using Account_Service.Behaviors;
 using Carter;
+using Account_Service.Features.DeductBalance;
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -65,6 +66,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseExceptionHandler();
-app.MapGrpcService<Account_Service.Grpc.v1.AccountServiceGrpcImplV1>();
+app.MapGrpcService<DeductBalanceGrpc>();
 app.MapCarter();
 app.Run();
